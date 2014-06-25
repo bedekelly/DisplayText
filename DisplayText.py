@@ -1,7 +1,7 @@
 """
 DisplayText
 
-Basically, I need to show some text in a paragraph. Prettily.
+Displays a big paragraph of text in terminal, no problems.
 """
 
 import curses
