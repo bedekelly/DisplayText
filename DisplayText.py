@@ -39,16 +39,12 @@ class Display:
 
 
     def format(self, text):
-        paragraphs = []
-        formatted_paras = []
-        for paragraph in text.split("\n"):
-            paragraphs.append(paragraph)
-
+        paragraphs = text.readlines()
+        lines = []
         for para in paragraphs:
-            formatted = textwrap.fill(para, self.cols)
-            formatted_paras.append(formatted)
-
-        return formatted_paras
+            lines.extend([line for line in textwrap.wrap(para, self.cols - 10)])
+            lines.append("")
+        return lines
 
 
     def refresh(self):
